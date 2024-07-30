@@ -1,0 +1,113 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a [routerLink]="['/dashboard']" class="sidebar-brand d-flex align-items-center justify-content-center">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">ILMS</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a [routerLink]="['/dashboard']" class="nav-link">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>{{ selectedEntity?.name }} Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <span>Module Setup</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="buttons.html">Function</a>
+                <a class="collapse-item" href="cards.html">Module</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePreset"
+            aria-expanded="true" aria-controls="collapsePreset">
+            <span>Preset</span>
+        </a>
+        <div id="collapsePreset" class="collapse" aria-labelledby="headingPreset"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="utilities-color.html">Canvas Bag</a>
+                <a class="collapse-item" href="utilities-color.html">Supplier</a>
+                <a class="collapse-item" href="utilities-border.html">Linen Category</a>
+                <a class="collapse-item" href="utilities-animation.html">Linen Type</a>
+                <a class="collapse-item" href="utilities-other.html">Template</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Linen Management -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLinenMgt"
+            aria-expanded="true" aria-controls="collapseLinenMgt">
+            <span>Linen Management</span>
+        </a>
+        <div id="collapseLinenMgt" class="collapse" aria-labelledby="headingLinenMgt"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="utilities-color.html">Linen</a>
+                <a class="collapse-item" href="utilities-color.html">Check Linen Status</a>
+                <a class="collapse-item" href="utilities-border.html">Register History</a>
+                <a class="collapse-item" href="utilities-animation.html">Stock History</a>
+            </div>
+        </div>
+    </li>
+
+       <!-- Organization Management -->
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOrgMgt"
+            aria-expanded="true" aria-controls="collapseOrgMgt">
+            <span>Organization Management</span>
+        </a>
+        <div id="collapseOrgMgt" class="collapse" aria-labelledby="headingOrdMgt"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="utilities-color.html">Linen Centre</a>
+                <a class="collapse-item" href="utilities-color.html">Laundry Plant</a>
+                <a class="collapse-item" href="utilities-border.html">Company</a>
+                <a class="collapse-item" href="utilities-animation.html">Driver</a>
+                <a class="collapse-item" href="utilities-other.html">Role Management</a>
+                <a class="collapse-item" href="utilities-other.html">List All User</a>
+            </div>
+        </div>
+    </li>
+
+     <!-- Client Profile -->
+     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientP"
+            aria-expanded="true" aria-controls="collapseClientP">
+            <span>Client Profile</span>
+        </a>
+        <div id="collapseClientP" class="collapse" aria-labelledby="headingClientP"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="utilities-color.html">Hotel</a>
+                <a class="collapse-item" href="utilities-color.html">Hospital</a>
+                <a class="collapse-item" href="utilities-border.html">Spa</a>
+                <a class="collapse-item" href="utilities-animation.html">Fitness</a>
+                <a class="collapse-item" href="utilities-other.html">F & B</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">           
+
+</ul>

@@ -1,0 +1,30 @@
+
+  
+.entity-selection {
+    text-align: center; /* Center the entity selection container */
+  }
+  
+  .entity-selection img {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    transition: opacity 0.3s ease;
+  }
+  
+  .entity-selection img.selected {
+    opacity: 1; /* Fully opaque for the selected image */
+    border-color: #007bff;
+  }
+  
+  .entity-selection img:not(.selected) {
+    opacity: 0.5; /* Greyed out effect for non-selected images */
+  }
+  
+  .entity-selection p {
+    margin: 0; /* Remove default margin for paragraphs */
+    font-size: 14px; /* Adjust text size as needed */
+  }
+  
