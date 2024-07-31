@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { EntityService } from '../../shared/services/entity.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   standalone: true,
@@ -12,17 +13,19 @@ import { EntityService } from '../../shared/services/entity.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  constructor(private authService: AuthService, private router: Router) {}
+
   selectedEntity: any = null;
 
-  router = inject(Router);
+  // router = inject(Router);
   entityService = inject(EntityService);
   http = inject(HttpClient);
 
   // Define entities with proper types
   entities = [
-    { name: 'Linen Centre' },
-    { name: 'Laundry Plant' },
-    { name: 'Client Profile' }
+    { name: 'LC' },
+    { name: 'LP' },
+    { name: 'CP' }
   ];
 
   // Define loginObj with types
@@ -35,42 +38,14 @@ export class LoginComponent {
     this.selectedEntity = entity;
   }
 
-  onLogin() {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-    });
-
-    this.http.post<{ Verified: boolean }>("http://10.10.60.101:8080/login", this.loginObj, { headers })
-      .subscribe({
-        next: (res) => {
-          if (res.Verified) {
-            if (this.selectedEntity) {
-              sessionStorage.setItem('selectedEntity', JSON.stringify(this.selectedEntity));
-              sessionStorage.setItem('userObj', JSON.stringify(this.loginObj));
-              this.entityService.setSelectedEntity(this.selectedEntity);
-
-              switch (this.selectedEntity.name) {
-                case 'Linen Centre':
-                  this.router.navigate(['/home']);
-                  break;
-                case 'Laundry Plant':
-                  this.router.navigate(['/home']);
-                  break;
-                case 'Client Profile':
-                  this.router.navigate(['/home']);
-                  break;
-              }
-            } else {
-              alert('Please select an entity');
-            }
-          } else {
-            alert('Wrong phone number or password');
-          }
-        },
-        error: (error: HttpErrorResponse) => {
-          console.error('Login error', error);
-          alert('An error occurred during login');
-        }
-      });
+  // Call login service
+  async onLogin() {
+    const loginSuccess = await this.authService.login(this.loginObj, this.selectedEntity)
+    if(loginSuccess){
+      const userRole = this.authService.getUserRole();
+      this.router.navigate(['/home']);
+    } else{
+      alert('Wrong phone number or password');
+    }
   }
 }
