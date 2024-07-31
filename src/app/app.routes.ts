@@ -6,6 +6,8 @@ import { FunctionComponent } from './components/pages/function/function.componen
 import { LayoutComponent } from './components/pages/page-layout/layout.component';
 import { LinenComponent } from './components/pages/linen/linen.component';
 import { authGuard } from './guards/auth.guard';
+import { ModuleComponent } from './components/pages/module/module.component';
+import { AddnewComponent } from './components/pages/module/addnew/addnew.component';
 
 export const routes: Routes = [
     {
@@ -38,6 +40,18 @@ export const routes: Routes = [
             {
                 path: 'function',
                 component: FunctionComponent,
+                canActivate: [authGuard],
+                data: { role: 'superadmin' } 
+            },
+            {
+                path: 'module',
+                component: ModuleComponent,
+                canActivate: [authGuard],
+                data: { role: 'superadmin' } 
+            },
+            {
+                path: 'add-module',
+                component: AddnewComponent,
                 canActivate: [authGuard],
                 data: { role: 'superadmin' } 
             },

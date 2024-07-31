@@ -15,13 +15,17 @@
     <li class="nav-item active">
         <a [routerLink]="['/home/dashboard']" class="nav-link">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>{{ selectedEntity?.name }} Dashboard</span></a>
+            <span>{{ 
+                selectedEntity?.name == 'LC' ? 'Linen Center'
+                : selectedEntity?.name == 'CP' ? 'Client Profile'
+                : ''
+            }} Dashboard</span></a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <ng-container *ngIf="selectedEntity?.name === 'Linen Centre'">
+    <ng-container *ngIf="selectedEntity?.name === 'LC'">
 
         <!-- Nav Item - Module Setup Collapse Menu -->
         <li class="nav-item">
@@ -32,7 +36,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a [routerLink]="['/home/function']" class="collapse-item">Function</a>
-                    <a class="collapse-item" href="cards.html">Module</a>
+                    <a [routerLink]="['/home/module']" class="collapse-item">Module</a>
                 </div>
             </div>
         </li>
@@ -113,7 +117,7 @@
 
     <!-- Sidebar For Laundry Plant -->
 
-    <ng-container *ngIf="selectedEntity?.name === 'Laundry Plant'">
+    <ng-container *ngIf="selectedEntity?.name === 'LP'">
 
         <!-- Nav Item - Billing Collapse Menu -->
         <li class="nav-item">
@@ -177,7 +181,7 @@
 
 
     <!-- Sidebar For Client Profile -->
-    <ng-container *ngIf="selectedEntity?.name === 'Client Profile'">
+    <ng-container *ngIf="selectedEntity?.name === 'CP'">
 
         <!-- Transaction Management  -->
         <li class="nav-item">
