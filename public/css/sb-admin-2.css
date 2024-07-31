@@ -11292,16 +11292,18 @@ input, textarea {
   border-radius: 4px;
 }
 
-button {
-  padding: 10px 20px;
+btn-addnewmod {
+  padding: 6px 6px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 
-button:hover {
+btn-addnewmod:hover {
   background-color: #0056b3;
 }
 

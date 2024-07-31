@@ -7,7 +7,9 @@ import { LayoutComponent } from './components/pages/page-layout/layout.component
 import { LinenComponent } from './components/pages/linen/linen.component';
 import { authGuard } from './guards/auth.guard';
 import { ModuleComponent } from './components/pages/module/module.component';
-import { AddnewComponent } from './components/pages/module/addnew/addnew.component';
+import { AddnewModuleComponent } from './components/pages/module/addnew-module/addnew-module.component';
+import { ModuleDetailsComponent } from './components/pages/module/module-details/module-details.component';
+import { FunctionEditComponent } from './components/pages/function/function-edit/function-edit.component';
 
 export const routes: Routes = [
     {
@@ -44,6 +46,12 @@ export const routes: Routes = [
                 data: { role: 'superadmin' } 
             },
             {
+                path: 'edit-function',
+                component: FunctionEditComponent,
+                canActivate: [authGuard],
+                data: { role: 'superadmin' } 
+            },
+            {
                 path: 'module',
                 component: ModuleComponent,
                 canActivate: [authGuard],
@@ -51,7 +59,13 @@ export const routes: Routes = [
             },
             {
                 path: 'add-module',
-                component: AddnewComponent,
+                component: AddnewModuleComponent,
+                canActivate: [authGuard],
+                data: { role: 'superadmin' } 
+            },
+            {
+                path: 'details-module/:id',
+                component: ModuleDetailsComponent,
                 canActivate: [authGuard],
                 data: { role: 'superadmin' } 
             },

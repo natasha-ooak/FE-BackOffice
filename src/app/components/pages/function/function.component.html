@@ -10,20 +10,22 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Entity</th>
             <th>Function Code</th>
             <th>Function Name</th>
             <th>Description</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
       <tr *ngFor="let func of functions">
-        <td>{{ func.id }}</td>
-        <td>{{ func.entity }}</td>
-        <td>{{ func.function_code }}</td>
-        <td>{{ func.function_name }}</td>
-        <td>{{ func.description }}</td>
+        <td>{{ func.Entity }}</td>
+        <td>{{ func.Function_code }}</td>
+        <td>{{ func.Function_name }}</td>
+        <td>{{ func.Description }}</td>
+        <td>
+          <button (click)="editFunction(func.Function_code)">Edit</button>
+        </td>
       </tr>
     </tbody>
       </table>
