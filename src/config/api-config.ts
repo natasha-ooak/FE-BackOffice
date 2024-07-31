@@ -1,10 +1,10 @@
 export const API_CONFIG = {
-    baseUrl: 'http://10.10.60.110:8080',
+    baseUrl: 'http://10.10.60.101:8080',
     
     loginEndpoint: '/login',
 
     functionEndpoint:{
-      listEndpoint: '/function/list',
+      listEndpoint: '/function/get-functionlist',
     },
 
     moduleEndpoint:{

@@ -1,0 +1,20 @@
+<div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Add New Module</h6>
+</div>
+
+<div class="card-body">
+    <form (ngSubmit)="addModule()">
+
+        <label for="module_name">Module Name:</label>
+        <input id="module_name" [(ngModel)]="newModule.module_name" name="module_name" required>
+
+        <label for="details">Description:</label>
+        <textarea id="details" [(ngModel)]="newModule.description" name="description"></textarea>
+
+        <div class = "btn-addnewmod">
+        <button type="submit">Add Module</button>
+        <button (click)="backtoHome()" type="button">Back</button>
+        </div>
+        
+    </form>
+</div>

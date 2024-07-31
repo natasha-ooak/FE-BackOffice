@@ -14,6 +14,7 @@ export class FunctionService {
   constructor(private http: HttpClient) { }
 
   getFunctions(): Observable<FunctionItem[]> {
+    console.log("function")
     return this.http.get<FunctionItem[]>(this.listUrl);
   }
 
