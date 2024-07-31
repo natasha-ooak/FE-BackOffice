@@ -5,6 +5,7 @@ import { ForgotPasswordComponent } from './components/pages/forgot-password/forg
 import { FunctionComponent } from './components/pages/function/function.component';
 import { LayoutComponent } from './components/pages/page-layout/layout.component';
 import { LinenComponent } from './components/pages/linen/linen.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -14,29 +15,36 @@ export const routes: Routes = [
     
     {
         path: 'login',
-        component: LoginComponent,
-      
+        component: LoginComponent,   
     },
     {
         path: 'home',
         component: LayoutComponent,
+        canActivate: [authGuard],
+        data: { role: 'superadmin' },
         children:[
 
             {
                 path: '',
-                component: DashboardComponent 
+                component: DashboardComponent,
+                canActivate: [authGuard],
+                data: { role: 'superadmin' } 
             },
             {
                 path: 'dashboard',
-                component: DashboardComponent 
+                component: DashboardComponent,
+                canActivate: [authGuard]
             },
             {
                 path: 'function',
-                component: FunctionComponent 
+                component: FunctionComponent,
+                canActivate: [authGuard],
+                data: { role: 'superadmin' } 
             },
             {
                 path: 'linen',
-                component: LinenComponent 
+                component: LinenComponent,
+                canActivate: [authGuard]
             }
         ]
     },
@@ -44,7 +52,4 @@ export const routes: Routes = [
         path: 'forgot-password',
         component: ForgotPasswordComponent,
     },
-    
-
-
 ];
