@@ -1,11 +1,10 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
     <!-- Sidebar - Brand -->
     <a [routerLink]="['/dashboard']" class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">ILMS</div>
+        <div class="sidebar-brand-text mx-3">ILMS</div> 
     </a>
 
     <!-- Divider -->
@@ -24,7 +23,6 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
     <ng-container *ngIf="selectedEntity?.name === 'LC'">
 
         <!-- Nav Item - Module Setup Collapse Menu -->
@@ -109,14 +107,9 @@
                 </div>
             </div>
         </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
     </ng-container>
 
-
     <!-- Sidebar For Laundry Plant -->
-
     <ng-container *ngIf="selectedEntity?.name === 'LP'">
 
         <!-- Nav Item - Billing Collapse Menu -->
@@ -174,11 +167,7 @@
                 </div>
             </div>
         </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
     </ng-container>
-
 
     <!-- Sidebar For Client Profile -->
     <ng-container *ngIf="selectedEntity?.name === 'CP'">
@@ -242,8 +231,13 @@
                 </div>
             </div>
         </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
     </ng-container>
+    
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button id="sidebarToggle" class="rounded-circle border-0"></button>
+    </div>
 </ul>
