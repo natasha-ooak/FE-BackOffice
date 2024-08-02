@@ -1,0 +1,15 @@
+#accordionSidebar{
+    height: 100%;
+}
+
+@media (max-width: 768px){
+    .sidebar .nav-item .nav-link span {
+        font-size: 0.75rem;
+    }
+}
+
+.toggled .nav-item .nav-link span {
+    font-size: 0.75rem;
+}
+
+

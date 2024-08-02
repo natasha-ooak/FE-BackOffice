@@ -49,6 +49,7 @@ export class AuthService {
             }
           },
           error: (error: HttpErrorResponse) => {
+            console.log(error)
             resolve(false);
           }
         })
