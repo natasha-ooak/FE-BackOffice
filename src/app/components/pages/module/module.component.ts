@@ -19,7 +19,7 @@ export class ModuleComponent implements OnInit {
       next: (data: ModuleItem[]) => {
         this.modules = data;
       },
-      error: (error) => {
+      error: (error: any) => {
         console.error('Error fetching modules', error);
       }
     });

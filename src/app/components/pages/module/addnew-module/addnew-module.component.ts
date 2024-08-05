@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { ModuleItem } from '../../../../models/module.model';
 import { ModuleService } from '../../../../services/module.service';
 import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-addnew-module',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,MatTabsModule],
   templateUrl: './addnew-module.component.html',
   styleUrl: './addnew-module.component.css'
 })

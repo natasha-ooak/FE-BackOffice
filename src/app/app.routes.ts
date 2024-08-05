@@ -9,7 +9,6 @@ import { authGuard } from './guards/auth.guard';
 import { ModuleComponent } from './components/pages/module/module.component';
 import { AddnewModuleComponent } from './components/pages/module/addnew-module/addnew-module.component';
 import { ModuleDetailsComponent } from './components/pages/module/module-details/module-details.component';
-import { FunctionEditComponent } from './components/pages/function/function-edit/function-edit.component';
 
 export const routes: Routes = [
     {
@@ -42,12 +41,6 @@ export const routes: Routes = [
             {
                 path: 'function',
                 component: FunctionComponent,
-                canActivate: [authGuard],
-                data: { role: 'superadmin' } 
-            },
-            {
-                path: 'edit-function',
-                component: FunctionEditComponent,
                 canActivate: [authGuard],
                 data: { role: 'superadmin' } 
             },

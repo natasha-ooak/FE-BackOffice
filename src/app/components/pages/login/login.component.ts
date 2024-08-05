@@ -13,7 +13,7 @@ import { AuthService } from '../../../services/auth/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   selectedEntity: any = null;
 
@@ -41,10 +41,10 @@ export class LoginComponent {
   // Call login service
   async onLogin() {
     const loginSuccess = await this.authService.login(this.loginObj, this.selectedEntity)
-    if(loginSuccess){
+    if (loginSuccess) {
       const userRole = this.authService.getUserRole();
       this.router.navigate(['/home']);
-    } else{
+    } else {
       alert('Wrong phone number or password');
     }
   }

@@ -10727,9 +10727,9 @@ a:focus {
   height: 2.5rem;
   width: 2.5rem;
   font-size: 1rem;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
+  align-content: center;
 }
 
 .btn-circle.btn-sm, .btn-group-sm > .btn-circle.btn {
@@ -11270,14 +11270,14 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 form {
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  margin: 0 auto;
+
 }
 
 label {
@@ -11292,18 +11292,52 @@ input, textarea {
   border-radius: 4px;
 }
 
-btn-addnewmod {
+
+/* add new button */
+.btn-add {
   padding: 6px 6px;
-  background-color: #007bff;
+  background-color: #4e73df;
   color: #fff;
   border: none;
+  border-color: #4e73df;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 5px;
   margin-bottom: 5px;
 }
 
-btn-addnewmod:hover {
-  background-color: #0056b3;
+.btn-add:hover {
+  color: #fff;
+  background-color: #2e59d9;
+  border-color: #2653d4;
 }
+
+.btn-add:focus, .btn-add.focus {
+  color: #fff;
+  background-color: #2e59d9;
+  border-color: #2653d4;
+  box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
+}
+
+
+
+/* maybe need for new button */
+
+/* .btn-add.disabled, .btn-add:disabled {
+  color: #fff;
+  background-color: #4e73df;
+  border-color: #4e73df;
+}
+
+.btn-add:not(:disabled):not(.disabled):active, .btn-add:not(:disabled):not(.disabled).active,
+.show > .btn-add.dropdown-toggle {
+  color: #fff;
+  background-color: #2653d4;
+  border-color: #244ec9;
+}
+
+.btn-add:not(:disabled):not(.disabled):active:focus, .btn-add:not(:disabled):not(.disabled).active:focus,
+.show > .btn-add.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(105, 136, 228, 0.5);
+} */
 
