@@ -1,3 +1,5 @@
+<div class="container-fluid">
+    <div class="card shadow mb-4">
 <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Add New Module</h6>
 </div>
@@ -11,10 +13,12 @@
         <label for="details">Description:</label>
         <textarea id="details" [(ngModel)]="newModule.description" name="description"></textarea>
 
-        <div class = "btn-addnewmod">
-        <button type="submit">Add Module</button>
-        <button (click)="backtoHome()" type="button">Back</button>
-        </div>
+        <div>
+        <button class = "btn-add" type="submit">Add Module</button>
+        <button class = "btn-add" (click)="backtoHome()">Back</button>
+    </div>
         
     </form>
+</div>
+</div>
 </div>

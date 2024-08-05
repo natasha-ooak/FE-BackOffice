@@ -1,11 +1,9 @@
+<div class="container-fluid">
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">Function</h6>
   </div>
   <div class="card-body">
-    <div class="search-container">
-      <!-- <input type="text" placeholder="Search..." [(ngModel)]="searchText" (ngModelChange)="filterData()"> -->
-    </div>
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
@@ -14,7 +12,6 @@
             <th>Function Code</th>
             <th>Function Name</th>
             <th>Description</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -23,12 +20,10 @@
         <td>{{ func.Function_code }}</td>
         <td>{{ func.Function_name }}</td>
         <td>{{ func.Description }}</td>
-        <td>
-          <button (click)="editFunction(func.Function_code)">Edit</button>
-        </td>
       </tr>
     </tbody>
       </table>
     </div>
   </div>
+</div>
 </div>

@@ -28,7 +28,9 @@
             ],
             "styles": [
               "src/styles.css",
-              "public/vendor/fontawesome-free/css/all.min.css"
+              "public/vendor/fontawesome-free/css/all.min.css",
+              "public/css/sb-admin-2.min.css",
+              "node_modules/ngx-countries-dropdown/assets/styles.css"
               
             ],
             "scripts": [
@@ -59,13 +61,7 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
